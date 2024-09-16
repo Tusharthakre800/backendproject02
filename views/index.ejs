@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Notepad</title>
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/579/579703.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body style="background-color: black; color: white;">
+   <div class="main">
+    <div class="form">
+        <form action="/create" method="post">
+            <input type="text"  required placeholder="title" name="title">
+            <textarea required placeholder=" enter your task details" name="details" ></textarea>
+            <button   type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="tasks">
+        <% if(files.length>0){%>
+            <% files.forEach((val)=>{%>
+                 <div class="task">
+                    <h1  class="h1text"><%=val%></h1>
+                    <div class="flex">
+                        <a class="" href="/files/<%=val%>">Read More.</a>
+                        <a class="left" href="/edit/<%= val%>">Edit Filaname</a>
+                    </div>
+                </div>
+                <%})%>
+
+        <%}else{%>
+            <h1>No Task yet</h1>
+        <%}%>
+    </div>
+   </div>
+</body>
+</html>

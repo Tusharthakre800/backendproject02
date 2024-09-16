@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body style="background-color: black; color: white;">
+   <div class="main">
+    <a class="reada"  href="/">go back </a>
+    <form action="/edit" method="post">
+        <input type="text"  required placeholder="previous name" name="previous" value="<%=filename%>">
+        <textarea required placeholder="New Name" name="New" ></textarea>
+        <button   type="submit" style="background-color: blue; color: beige;">Update name</button>
+    </form>
+   </div>
+</body>
+</html>
