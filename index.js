@@ -38,6 +38,12 @@ app.post("/create",(req,res)=>{
    });
 })
 
+app.get("/delete/:id",(req,res)=>{
+    fs.unlink(`./files/${req.params.id}`,(err)=>{
+        res.redirect("/")
+    })
+})
+
 app.listen(2001,()=>{
     console.log("it's running");
     
