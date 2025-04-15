@@ -5,34 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Notepad</title>
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/579/579703.png" type="image/x-icon">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body style="background-color: black; color: white;">
-   <div class="main">
-    <div class="form">
-        <form action="/create" method="post">
-            <input type="text"  required placeholder="title" name="title">
-            <textarea required placeholder=" enter your task details" name="details" ></textarea>
-            <button   type="submit">Submit</button>
+
+<body class="bg-gray-900 text-gray-200 w-full h-full">
+   <div class="max-w-md mx-auto p-4 flex flex-col items-center">
+    <div class="form mb-4">
+        <form action="/create" method="post" class="space-y-4">
+            <input type="text" required placeholder="title" name="title" class="w-full p-2 border border-gray-600 rounded bg-gray-800 text-gray-200">
+            <textarea required placeholder=" enter your task details" name="details" class="w-full p-2 border border-gray-600 rounded bg-gray-800 text-gray-200"></textarea>
+            <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Submit</button>
         </form>
     </div>
-    <div class="tasks">
-        <% if(files.length>0){%>
-            <% files.forEach((val)=>{%>
-                 <div class="task">
-                    <h1  class="h1text"><%=val%></h1>
-                    <div class="flex">
-                        <a class="" href="/files/<%=val%>">Read More.</a>
-                        <a class="left" href="/edit/<%= val%>">Edit Filaname</a>
-                        <a class="left" href="/delete/<%= val %>">delete File</a>
-                    </div>
+        </div>
+<div class="tasks overflow-auto max-h-96">
+    <% if(files.length>0){%>
+        <% files.forEach((val)=>{%>
+             <div class="task mb-4 p-4 border border-gray-600 rounded bg-gray-800">
+                <h1 class="text-lg font-bold"><%=val%></h1>
+                <div class="flex space-x-2">
+                    <a class="text-blue-400" href="/files/<%=val%>">Read More.</a>
+                    <a class="text-blue-400" href="/edit/<%= val%>">Edit Filename</a>
+                    <a class="text-red-400" href="/delete/<%= val %>">Delete File</a>
                 </div>
-                <%})%>
+            </div>
+            <%})%>
 
-        <%}else{%>
-            <h1>No Task yet</h1>
-        <%}%>
-    </div>
-   </div>
+    <%}else{%>
+        <h1>No Task yet</h1>
+    <%}%>
+</div>
 </body>
 </html>

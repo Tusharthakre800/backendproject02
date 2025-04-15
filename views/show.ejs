@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body style="background-color: black; color: white;">
-   <div class="main">
-    <a class="reada"  href="/">go back </a>
-    <h1 class="readh1"><%=filename%></h1>
-    <p class="readp"><%=filedata%></p>
+<body class="bg-black text-white">
+   <div class="main p-4 min-w-md mx-auto">
+    <a class="text-blue-500 hover:underline reada text-lg" href="/">go back</a>  
+      <h1 class="text-3xl font-bold"><%=filename%></h1>
+    <p class="mt-2 w-18"><%=filedata%></p>
    </div>
 </body>
-</html>
+</html> 

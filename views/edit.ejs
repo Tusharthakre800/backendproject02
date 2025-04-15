@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body style="background-color: black; color: white;">
-   <div class="main">
-    <a class="reada"  href="/">go back </a>
-    <form action="/edit" method="post">
-        <input type="text"  required placeholder="previous name" name="previous" value="<%=filename%>">
-        <textarea required placeholder="New Name" name="New" ></textarea>
-        <button   type="submit" style="background-color: blue; color: beige;">Update name</button>
+<body class="bg-black text-white">
+   <div class="main max-w-md mx-auto p-4">
+    <a class="reada text-blue-500 hover:underline" href="/">go back </a>
+    <form action="/edit" method="post" class="mt-4">
+        <input type="text" required placeholder="previous name" name="previous" value="<%=filename%>" class="w-full p-2 mb-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <textarea required placeholder="New Name" name="New" class="w-full p-2 mb-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        <button type="submit" class="w-full flex justify-center items-center bg-blue-500 text-beige p-2 rounded hover:bg-blue-600 transition duration-200">Update name</button>
     </form>
    </div>
 </body>
